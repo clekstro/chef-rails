@@ -99,7 +99,7 @@ For the very same reason, we’re going to exaplain the example for you to ride 
     ]
   },
 
-  // If you're going to use mysql, comment out the following lines.
+  // If you're going to use mysql, umcomment the following lines.
   // "mysql": {
   //   "server_root_password"  : "asdf1234",
   //   "server_repl_password"  : "asdf1234",
