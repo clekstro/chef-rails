@@ -99,16 +99,6 @@ For the very same reason, we’re going to exaplain the example for you to ride 
     ]
   },
 
-  // If you're going to use mysql, umcomment the following lines.
-  // "mysql": {
-  //   "server_root_password"  : "asdf1234",
-  //   "server_repl_password"  : "asdf1234",
-  //   "server_debian_password": "asdf1234",
-  //   "server": {
-  //     "packages": ["mysql-server", "libmysqld-dev"]
-  //   }
-  // },
-
   // You must specify the ubuntu distribution by it’s name to configure the proper version
   // of nginx, otherwise it’s going to fail.
   "nginx": {
