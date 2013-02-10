@@ -143,49 +143,7 @@ For the very same reason, we’re going to exaplain the example for you to ride 
             ]
           }
         ]
-      },
-
-      // Example for an application served by Thin server
-      "app2": {
-        "listen"     : [80],
-        "server_name": "app2.example.com",
-        "public_path": "/home/vagrant/public_html/app2/current/public",
-        "upstreams"  : [
-          {
-            "name"    : "app2",
-            "servers" : [
-              "localhost:3000 max_fails=3 fail_timeout=1s",
-              "localhost:3001 max_fails=3 fail_timeout=1s",
-              "localhost:3002 max_fails=3 fail_timeout=1s",
-              "localhost:3003 max_fails=3 fail_timeout=1s"
-            ]
-          }
-        ],
-        "locations": [
-          {
-            "path": "/",
-            "directives": [
-              "proxy_set_header X-Forwarded-Proto $scheme;",
-              "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;",
-              "proxy_set_header X-Real-IP $remote_addr;",
-              "proxy_set_header Host $host;",
-              "proxy_redirect off;",
-              "proxy_http_version 1.1;",
-              "proxy_set_header Connection '';",
-              "proxy_pass http://app2;"
-            ]
-          },
-          {
-            "path": "~ ^/(assets)/",
-            "directives": [
-              "gzip_static on;",
-              "expires max;",
-              "add_header Cache-Control public;"
-            ]
-          }
-        ]
       }
-    }
   },
 
   // The ruby version you’re going to use. Valid values, by now, are 1.8, 1.9 and 1.9.1
